@@ -107,15 +107,30 @@
 ## Terraform structural types
 <table>
     <tr>
+        <th> <em>Those types require a schema as an argument, to specify which types are allowed for which elements</em>
+        </th>
+        <th><em> </br>
+            variable "with_optional_attribute"{</br>
+                type = object({</br>
+                    a = string </br>
+                    b = optional(string) </br>
+                })</br>
+            })</br></em>
+        </th>
+    </tr>
+    <tr>
         <td> tuple </td>
         <td>
-            A fixed-length sequence of values of specified types.
+            tuple([string, number, bool])
         </td>
     </tr>
     <tr>
         <td> object </td>
         <td> 
-            A lookup table, matching a fixed set of keys to values of specified types.
+            {</br>
+                name = "jhon"</br>
+                age = 32 </br>
+            }<br/>
         </td>
     </tr>
 </table>
